@@ -2,10 +2,6 @@ services:
   - type: web
     name: school-management-django
     env: python
-    buildCommand: pip install -r requirements.txt
+    buildCommand: cd Django-School-Management-System && pip install -r requirements.txt
     startCommand: gunicorn Django-School-Management-System.wsgi
-    envVars:
-      - key: DJANGO_SETTINGS_MODULE
-        value: Django-School-Management-System.settings
-      - key: SECRET_KEY
-        generateValue: true
+
